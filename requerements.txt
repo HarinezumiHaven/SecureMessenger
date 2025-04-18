@@ -1,0 +1,9 @@
+Flask
+Flask-Cors
+Flask-SQLAlchemy
+Flask-SocketIO
+Flask-Migrate
+Werkzeug
+PyJWT
+python-dotenv
+eventlet
