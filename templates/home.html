@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.email }}!</h1>
+    <p>You have successfully logged in.</p>
+
+    <h3>Live Chat:</h3>
+    
+    <div id="messages"></div>
+    <input id="type_msg" type="text" placeholder="Type a message..." />
+    <button id="send_msg">Send</button>
+    <a href="/logout" id="logout-btn">Logout</a>
+    <a href="/profile">Profile</a>
+    <script>
+        var socket = io.connect('http://127.0.0.1:5000');
+
+        // send msg
+        document.getElementById("type_msg").addEventListener("keypress", function(e) {
+            if (e.key === 'Enter') {
+                let message = document.getElementById("type_msg").value;
+                socket.emit('send_message', message);
+                document.getElementById("type_msg").value = '';
+            }
+            // 
+        });
+        document.getElementById("send_msg").addEventListener("click", function() {
+            let message = document.getElementById("type_msg").value;
+            socket.emit('send_message', message);
+            document.getElementById("type_msg").value = '';
+        });
+        // get msg
+        socket.on('message', function(msg) {
+            let messagesDiv = document.getElementById('messages');
+            let newMessage = document.createElement("div");
+            newMessage.innerHTML = msg
+            messagesDiv.appendChild(newMessage);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        });
+
+        // client logout
+        document.getElementById("logout-btn").addEventListener("click", function(event) {
+            localStorage.removeItem("authToken");
+        });
+    </script>
+
+</body>
+</html>

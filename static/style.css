@@ -1,0 +1,25 @@
+/* styles for id */
+#show-register {
+    display: block;
+    float: left;
+}
+
+#show-login {
+    display: block;
+}
+
+#home-btn {
+    display: none;
+}
+
+/* styles for classes */
+.anim-button {
+    transition-duration: 0.4s;
+    background-color: rgb(222, 224, 224);
+    border-radius: 12px;
+}
+
+.anim-button:hover {
+    background-color: gray;
+    color: rgb(243, 235, 235);
+}

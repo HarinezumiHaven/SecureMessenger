@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth System</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+
+
+
+    <h1>Auth System</h1>
+
+    <button id="show-register" class="anim-button">Register</button>
+    <button id="show-login" class="anim-button">Login</button>
+    <button id="home-btn" class="anim-button">Home</button>
+
+    <div id="register-form" style="display: none;">
+        <h2>Register</h2>
+        <form id="register">
+            <input type="email" id="reg-email" placeholder="Enter email" required>
+            <input type="password" id="reg-password" placeholder="Enter password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <div id="login-form" style="display: none;">
+        <h2>Login</h2>
+        <form id="login">
+            <input type="email" id="login-email" placeholder="Enter email" required>
+            <input type="password" id="login-password" placeholder="Enter password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script src="/static/main_page.js?ver=1.0"></script>
+</body>
+</html>
