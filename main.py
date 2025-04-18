@@ -142,7 +142,7 @@ def handle_message(msg):
 
 
 #   P R O F I L E
-@socketio.on('/profile', methods=['GET'])
+@socketio.on('/profile')
 def profile():
     user_id = session['user_id']
     user = User.query.get(user_id)
