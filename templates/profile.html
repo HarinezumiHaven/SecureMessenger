@@ -5,25 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 <body>
-<h2>
-    Welcome to Profile
-</h2>
-<h3>
-Account Data:
-</h3>
-<div id="email_show">
-</div>
-
-<script>
-    document.getElementById('email_show', function(){
-        let eMailDiv = document.getElementById('email_show')
-        eMailDiv.innerHTML = email_show
-    });
-</script>
+    <style>
+        /* styles for id */
+        #show-register {
+            display: block;
+            float: left;
+        }
+        
+        #show-login {
+            display: block;
+        }
+        
+        #home-btn {
+            display: none;
+        }
+        
+        /* styles for classes */
+        .anim-button {
+            transition-duration: 0.4s;
+            background-color: rgb(222, 224, 224);
+            border-radius: 12px;
+        }
+        
+        .anim-button:hover {
+            background-color: gray;
+            color: rgb(243, 235, 235);
+        }
+    </style>
+    <h2>
+        Welcome to Profile
+    </h2>
+    <h3>
+    Account Data:
+    </h3>
+    <div id="email_show">
+    </div>
+    
+    <script>
+        document.getElementById('email_show', function(){
+            let eMailDiv = document.getElementById('email_show')
+            eMailDiv.innerHTML = email_show
+        });
+    </script>
 
 </body>
 </html>
