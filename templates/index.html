@@ -5,11 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auth System</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 <body>
-
+    <style>
+        /* styles for id */
+        #show-register {
+            display: block;
+            float: left;
+        }
+        
+        #show-login {
+            display: block;
+        }
+        
+        #home-btn {
+            display: none;
+        }
+        
+        /* styles for classes */
+        .anim-button {
+            transition-duration: 0.4s;
+            background-color: rgb(222, 224, 224);
+            border-radius: 12px;
+        }
+        
+        .anim-button:hover {
+            background-color: gray;
+            color: rgb(243, 235, 235);
+        }
+    </style>
 
 
     <h1>Auth System</h1>
